@@ -6,7 +6,8 @@ const puppeteer = require('puppeteer');
   await page.goto('https://pptr.dev/');
   await page.click('.searchBox_ZlJk');
   await page.keyboard.type('pdf');
-  await page.keyboard.press('Enter', { delay: 500 });
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(500);
   await page.emulateMediaType('screen');
   await page.pdf({ path: 'screenshots/script1.pdf' });
 
